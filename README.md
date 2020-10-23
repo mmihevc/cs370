@@ -1,4 +1,4 @@
-# cs370
+# cs370 Term Project
 
 ## Logging into Machine
 
