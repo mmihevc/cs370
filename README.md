@@ -6,6 +6,7 @@
       * ssh eid @ machine_name .cs.colostate.edu
 2. ssh into VM
       * ssh kubeuser@oak -p 5528
+      * password: cs370minikube
       
       
 Hostname: cs370-28
