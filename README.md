@@ -1,6 +1,6 @@
 # cs370 Term Project
 
-## To deployish
+## To deployish 
 * npm start
 * npm run build
 
