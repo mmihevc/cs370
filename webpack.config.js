@@ -34,7 +34,7 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin(),
-        new HtmlWebpackPlugin({ template: "client/static/template/index.html", favicon: "client/static/template/favicon.ico"}),
+        new HtmlWebpackPlugin({ template: "client/index.html", favicon: "client/components/favicon.ico"}),
         new webpack.HotModuleReplacementPlugin()
     ],
     output: { filename: "bundle.js", path: path.join(__dirname, outputDirectory) },
