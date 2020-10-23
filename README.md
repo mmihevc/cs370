@@ -1,5 +1,9 @@
 # cs370 Term Project
 
+## To deployish
+* npm start
+* npm run build
+
 ## Logging into Machine
 
 1. ssh into lab machine
