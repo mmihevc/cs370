@@ -11,3 +11,13 @@
 Hostname: cs370-28
 
 PhysicalHost: oak
+
+## Getting Started
+
+1. Verify Docker Daemon service is running with systemd
+      * systemctl status docker
+      * docker ps
+2. Start Minikube with Docker as driver
+      * minikube start --driver=docker
+3. Verify local, single node k8s cluster
+      * kubectl get all
