@@ -11,7 +11,8 @@
     "url": "https://github.com/mmihevc/cs370"
   },
   "keywords": [
-    "chess"
+    "docker",
+    "containers"
   ],
   "author": "Maddie Mihevc, Kai Griem, Cole Petty",
   "license": "ISC",
