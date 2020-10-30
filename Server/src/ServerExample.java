@@ -33,6 +33,15 @@ public class ServerExample {
 
     private void processRestfulAPIRequest(){
         Spark.get("/", this::echoRequest);
+        Spark.get("/script/:searchTerm", this::scriptRequest);
+    }
+
+    private String scriptRequest(Request request, Response response){
+        String searchTerm = request.params("searchTerm");
+        response.type("application/json");
+        response.header("Access-Control-Allow-Origin", "*");
+        response.status(200); //ok
+        return scriptToJson(request, searchTerm);
     }
 
     private String echoRequest(Request request, Response response){
@@ -40,6 +49,14 @@ public class ServerExample {
         response.header("Access-Control-Allow-Origin", "*");
         response.status(200); //ok
         return toJson(request);
+    }
+
+    private String scriptToJson(Request request, String searchTerm){
+        int occurances=Read.Return_Occurances(searchTerm);
+        String oc = Integer.toString(occurances);
+        return "{\n"
+                + "\"LOTR script\":\""+ oc + "\",\n"
+                + "}";
     }
 
     private String toJson(Request request){
