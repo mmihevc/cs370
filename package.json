@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "370 Term Project",
   "scripts": {
-    "start": "webpack-dev-server -d",
-    "build": "webpack -p"
+    "start": "node_modules/.bin/webpack-dev-server -d",
+    "build": "node_modules/.bin/webpack -p"
   },
   "repository": {
     "type": "git",
