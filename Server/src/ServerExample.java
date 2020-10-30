@@ -7,7 +7,16 @@ import java.util.HashMap;
 
 
 public class ServerExample {
-    public void main(String[] args){
+    public static void main(String[] args){
+        new ServerExample();
+    /*-> {
+            System.out.println("get");
+            String key=request.params("id");
+            System.out.println(map.get(key));
+            return map.get(key)+"\n";
+        });*/
+    }
+    public ServerExample(){
         BasicConfigurator.configure();
         System.out.println("test");
         configureServer();
@@ -15,13 +24,7 @@ public class ServerExample {
         HashMap<String, String> map=new HashMap<>();
         map.put("Firstname", "John");
         map.put("Lastname", "Smith");
-        this.processRestfulAPIRequest();
-    /*-> {
-            System.out.println("get");
-            String key=request.params("id");
-            System.out.println(map.get(key));
-            return map.get(key)+"\n";
-        });*/
+        processRestfulAPIRequest();
     }
 
     private static void configureServer(){
