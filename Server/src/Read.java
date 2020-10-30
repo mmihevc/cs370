@@ -7,11 +7,11 @@ public class Read
 {
 
 // Return the number of occurances of string lookingFor within the LOTR FOTR Script
-private static int Return_Occurances(String lookingFor)
+public static int Return_Occurances(String lookingFor)
 {
   int return_value = 0;
   try {
-  File myObj = new File("lotr-the-two-towers.txt");
+  File myObj = new File("files/lotr-the-two-towers.txt");
   Scanner myReader = new Scanner(myObj);
   while (myReader.hasNextLine()) {
     String data = myReader.nextLine();
