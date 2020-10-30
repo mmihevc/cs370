@@ -1,3 +1,5 @@
+package src;
+
 import java.io.File;  // Import the File class
 import java.io.FileNotFoundException;  // Import this class to handle errors
 import java.util.Scanner; // Import the Scanner class to read text files
@@ -11,7 +13,7 @@ public static int Return_Occurances(String lookingFor)
 {
   int return_value = 0;
   try {
-  File myObj = new File("files/lotr-the-two-towers.txt");
+  File myObj = new File("lotr-the-two-towers.txt");
   Scanner myReader = new Scanner(myObj);
   while (myReader.hasNextLine()) {
     String data = myReader.nextLine();
@@ -49,6 +51,6 @@ return return_value;
 
 public static void main(String[] args)
 {
-  System.out.println(Return_Occurances("the"));
+  System.out.println(Return_Occurances( "the"));
 }
 }
