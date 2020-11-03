@@ -12,6 +12,11 @@ public class Read
 public static int Return_Occurances(String lookingFor)
 {
   int return_value = 0;
+  return countMatches(text.text, lookingFor);
+  /*
+  try {
+  File myObj = new File("Server/src/lotr-the-two-towers.txt");
+  //File myObj = new File("lotr-the-two-towers.txt");
   ArrayList<String> lines = new ArrayList<String>();
   try {
   File myObj = new File("lotr-the-two-towers.txt");
@@ -27,7 +32,9 @@ public static int Return_Occurances(String lookingFor)
   System.out.println("An error occurred.");
   e.printStackTrace();
 }
+
 return return_value;
+   */
 }
 
 	// Return the lines of lines in an ArrayList of string lookingFor within the LOTR FOTR Script
