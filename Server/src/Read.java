@@ -10,8 +10,11 @@ public class Read
 public static int Return_Occurances(String lookingFor)
 {
   int return_value = 0;
+  return countMatches(text.text, lookingFor);
+  /*
   try {
-  File myObj = new File("files/lotr-the-two-towers.txt");
+  File myObj = new File("Server/src/lotr-the-two-towers.txt");
+  //File myObj = new File("lotr-the-two-towers.txt");
   Scanner myReader = new Scanner(myObj);
   while (myReader.hasNextLine()) {
     String data = myReader.nextLine();
@@ -23,7 +26,9 @@ public static int Return_Occurances(String lookingFor)
   System.out.println("An error occurred.");
   e.printStackTrace();
 }
+
 return return_value;
+   */
 }
 
 // https://www.techiedelight.com/find-occurrences-of-substring-string-java/

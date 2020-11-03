@@ -55,7 +55,7 @@ public class ServerExample {
         int occurances=Read.Return_Occurances(searchTerm);
         String oc = Integer.toString(occurances);
         return "{\n"
-                + "\"LOTR script\":\""+ oc + "\",\n"
+                + "\"count\":\""+ oc + "\",\n"
                 + "}";
     }
 
