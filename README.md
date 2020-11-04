@@ -6,10 +6,8 @@ When everybody was younger they anxiously waited by the mailbox hoping that thei
 ## Usage
 Since our project has a webpage and requires user interaction you only need to deploy the website in order to deploy the webpage and get results
 
-* To build:
-  * **npm build** 
-* To run:
-  * **npm start**
+* To build: **npm build** 
+* To run: **npm start**
 
 
 ## Docker
