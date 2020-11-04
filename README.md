@@ -11,6 +11,8 @@ Since our project has a webpage and requires user interaction you only need to d
 * To build: **npm run build** 
 * To run: **npm start**
 
+There are not addtional options to provide when running the program since the user interface gets the term from the user's input.
+
 
 ## Docker
 To build the docker image
@@ -22,4 +24,6 @@ Make sure that permissions are set for client.sh and server.sh, if they are not 
    * **./server.sh**
 2. Build the Client
    * ./client.sh
-   * Note: at the moment the client does not perform any actions so you do not need to run the client
+   * Note: at the moment the client does not perform any actions so you do not need to run the client.
+   
+Running ./server.sh will build your Docker image and run the image as a Container.
