@@ -1,5 +1,7 @@
 import React, {Component} from "react";
+
 import {TextField} from "@material-ui/core";
+import {sendServerRequest} from "./restfulAPI";
 
 
 export default class App extends Component{
@@ -33,7 +35,12 @@ export default class App extends Component{
 
     handleChange(event) {
         event.preventDefault();
+        sendServerRequest(this.state.searchTerm).then(query => {
+            alert(query.body);
+        });
     }
+
+
 }
 
 

@@ -1,53 +1,17 @@
 # cs370 Term Project
 
-## To deployish 
-* npm start
-* npm run build
+## Description
+When everybody was younger they anxiously waited by the mailbox hoping that their Hogwarts would be delivered. Since we are unable to make that a possibilty for our youngerselves we developed a program using Docker and Containerization that prompts the user for a word and then sends the word to the server. On the server side an api request is sent in order to find the sentences that contain the word. It is then sent back to the Client side and displayed on the website. It works like magic but it's not. 
 
-## Logging into Machine
+## Usage
+Since our project has a webpage and requires user interaction you only need to deploy the website in order to deploy the webpage and get results
 
-1. ssh into lab machine
-      * ssh eid @ machine_name .cs.colostate.edu
-2. ssh into VM
-      * ssh kubeuser@oak -p 5528
-      * password: cs370minikube
-      
-      
-Hostname: cs370-28
+* To build: **npm run build** 
+* To run: **npm start**
 
-PhysicalHost: oak
 
-## Getting Started
+## Docker
+To build the docker image
 
-1. Verify Docker Daemon service is running with systemd
-      * systemctl status docker
-      * docker ps
-2. Start Minikube with Docker as driver
-      * minikube start --driver=docker
-3. Verify local, single node k8s cluster
-      * kubectl get all
-      
-
-## Getting Started: Dockerhub
-
-1. Make a Dockerhub account: https://hub.docker.com/
-     * create repo
-2. Upload Docker image to Dockerhub
-    1. build your image
-        * docker build -t my_image ./ 
-    2. Tag your image to <dockerhub_user>/<repositiory_name>:version
-        * docker tag my_image username/cs370tp:latest
-    3. Push your image to public Dockerhub repo
-        * docker push username/cs370tp:latest
-        
-## Starting Development: With Containers
-
-1. Create Dockerfile for your project
-2. Build Docker image of your project
-     * docker build -t project-dev .
-3. Run as Docker container, first on host network
-     * docker run -it --name=project-dev --network=host project-dev
-     1. Verify you’re able to reach it by making a curl request:
-          * curl -X GET localhost:8080
-4. Run as Docker container, but use exposed ports
-     * docker run -it --name=project-dev -p 8080:8080 project-dev
+1. docker build -t my_370 .
+2. docker run -it --name=my_370 --network=host my_370Tag

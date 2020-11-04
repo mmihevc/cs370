@@ -1,4 +1,4 @@
-package src;//import spark.Spark;
+//import spark.Spark;
 import org.apache.log4j.BasicConfigurator;
 import spark.Request;
 import spark.Spark;
@@ -20,9 +20,7 @@ public class ServerExample {
     }
     public ServerExample(){
         BasicConfigurator.configure();
-        System.out.println("test");
         configureServer();
-        System.out.println("did it");
         HashMap<String, String> map=new HashMap<>();
         map.put("Firstname", "John");
         map.put("Lastname", "Smith");
@@ -65,6 +63,7 @@ public class ServerExample {
     private String scriptToJson(Request request, String searchTerm){
         int occurances=Read.Return_Occurances(searchTerm);
         String oc = Integer.toString(occurances);
+        //for(int i=0;i<50;i++){System.out.println("count: "+oc);}
         return "{\n"
                 + "\"count\":\""+ oc + "\",\n"
                 + "}";
