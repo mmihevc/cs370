@@ -1,3 +1,5 @@
+package src;
+
 import java.util.ArrayList;
 import java.io.File;  // Import the File class
 import java.io.FileNotFoundException;  // Import this class to handle errors
@@ -39,21 +41,15 @@ return return_value;
 	// Return the lines of lines in an ArrayList of string lookingFor within the LOTR FOTR Script
 	public static ArrayList<String> Return_Lines(String lookingFor)
 	{
+		String t = text.text;
+		String[] data = t.split("\n");
 		ArrayList<String> lines = new ArrayList<String>();
-		try {
-			File myObj = new File("lotr-the-two-towers.txt");
-			Scanner myReader = new Scanner(myObj);
-			while (myReader.hasNextLine()) {
-				String data = myReader.nextLine();
-				if(data.indexOf(lookingFor) != -1) {
-					lines.add(data);
-				}
-				//System.out.println(data);
+		for(int i =0; i < data.length; i++)
+		{
+			if(data[i].indexOf(lookingFor) != -1)
+			{
+				lines.add(data[i]);
 			}
-			myReader.close();
-		} catch (FileNotFoundException e) {
-			System.out.println("An error occurred.");
-			e.printStackTrace();
 		}
 		return lines;
 	}
