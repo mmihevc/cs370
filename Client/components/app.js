@@ -36,7 +36,7 @@ export default class App extends Component{
     handleChange(event) {
         event.preventDefault();
         sendServerRequest(this.state.searchTerm).then(query => {
-
+            alert(query.body);
         });
     }
 
