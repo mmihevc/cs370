@@ -18,12 +18,12 @@ __Server__
     /script/*search_term*
     /scriptlines/*search_term*
    For example:
-   http://localhost:3000/script/Harry
-   This will return the number of lines where the word Harry is found in the text.
-   http://localhost:3000/scriptlines/Harry
-   This will return the text of lines where the word Harry is found in  a JSON(esque) format.
-   *Note: The current searching text is currently Chapter 1 of J.K. Rowling's Harry Potter: The Sorcerer's Stone)*
- 4. Please query with any word you wish to replace the "Harry" *search_term* parameter to test the server as you please. 
+   * http://localhost:3000/script/Harry  
+    This will return the number of lines where the word Harry is found in the text.  
+   * http://localhost:3000/scriptlines/Harry  
+   This will return the text of lines where the word Harry is found in  a JSON(esque) format.  
+   * *Note: The current searching text is currently Chapter 1 of J.K. Rowling's Harry Potter: The Sorcerer's Stone)*  
+ 4. Please query with any word you wish to replace the "Harry" *search_term* parameter to test the server as you please.   
 
 __Client__ 
 1. Make sure that executable permissions are set for client.sh, if they are not set run:
