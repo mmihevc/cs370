@@ -7,6 +7,7 @@ The goal of our project once it is fully implemented the distributed hosting of 
 Currently all the functionality is not completely implemented yet but at the moment you can run a Docker container that handle the requests for what word that the user would like to search for. 
 
 ## Usage
+
  * Clone this repository from github
  
 __Server__
@@ -34,6 +35,7 @@ __Client__
    * **./client.sh** 
 3. You will now be able to reach our client running in a docker container.
    * Note: the docker container will be named "client" and utlilizes port 4000
+
 
 ## Docker
 * We decided to handle building the docker image and to run the image as a container for you within the *server.sh* and *client.sh* executables within the top level of our project directory. This was done to fulfill the requirement of running the project in a single command. You can use the command(s) "cat ./server.sh" or "cat ./client.sh" if you wish to see those configurations. 
