@@ -8,6 +8,7 @@ Currently all the functionality is not completely implemented yet but at the mom
 
 ## Usage
  * Clone this repository from github
+ 
 __Server__
 1. Make sure that executable permissions are set for server.sh, if they are not set run:
    * **chmod +x server.sh**
