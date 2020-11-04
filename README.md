@@ -34,7 +34,7 @@ __Client__
    * Note: at the moment the client does not perform any actions so you do not need to run the client.
    * Note: the docker container will be named "client" and utlilizes port 4000
 
-__No-containers
+__No-containers__
 Since our project has a webpage and "requires" user interaction you only need to deploy the website in order to deploy the webpage and get results. If you want to run the project without Docker, use the commands below:
 
 * To build: **npm install** 
@@ -42,4 +42,4 @@ Since our project has a webpage and "requires" user interaction you only need to
 
 
 ## Docker
-1. We decided to handle building the docker image and to run the image as a container for you within the *server.sh* and *client.sh* executables within the top level of our project directory. This was done to fulfill the requirement of running the project in a single command. 
+We decided to handle building the docker image and to run the image as a container for you within the *server.sh* and *client.sh* executables within the top level of our project directory. This was done to fulfill the requirement of running the project in a single command. 
