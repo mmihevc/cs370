@@ -13,5 +13,10 @@ Since our project has a webpage and requires user interaction you only need to d
 ## Docker
 To build the docker image
 
-1. docker build -t my_370 .
-2. docker run -it --name=my_370 --network=host my_370Tag
+Make sure that permissions are set for client.sh and server.sh, if they are not set run:
+**chmod 777 client.sh server.sh**
+
+1. Build the Client
+  * ./client.sh
+2. Build the Server
+  * ./server.sh
