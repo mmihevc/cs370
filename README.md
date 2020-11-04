@@ -32,7 +32,7 @@ __Client__
    * **chmod +x client.sh**
 2. Start the RESTful Server in a docker container with:
    * **./client.sh** 
-3. You will now be able to reach our client running in a docker container at port 3000.
+3. You will now be able to reach our client running in a docker container.
    * Note: the docker container will be named "client" and utlilizes port 4000
 
 ## Docker
