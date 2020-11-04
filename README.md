@@ -35,6 +35,7 @@ __Client__
    * Note: the docker container will be named "client" and utlilizes port 4000
 
 __No-containers__
+
 Since our project has a webpage and "requires" user interaction you only need to deploy the website in order to deploy the webpage and get results. If you want to run the project without Docker, use the commands below:
 
 * To build: **npm install** 
