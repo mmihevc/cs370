@@ -1,5 +1,3 @@
-package src;
-
 public class text {
     public static final String text = "Mr. and Mrs. Dursley, of number four, Privet Drive, were proud to say\n" +
             "that they were perfectly normal, thank you very much. They were the last\n" +

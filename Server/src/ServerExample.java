@@ -1,4 +1,3 @@
-package src;
 import org.apache.log4j.BasicConfigurator;
 import spark.Request;
 import spark.Spark;
@@ -21,9 +20,6 @@ public class ServerExample {
     public ServerExample(){
         BasicConfigurator.configure();
         configureServer();
-        HashMap<String, String> map=new HashMap<>();
-        map.put("Firstname", "John");
-        map.put("Lastname", "Smith");
         processRestfulAPIRequest();
     }
 
@@ -39,6 +35,7 @@ public class ServerExample {
 
     private String scriptRequest(Request request, Response response){
         String searchTerm = request.params("searchTerm");
+        System.out.println(request.url());
         response.type("application/json");
         response.header("Access-Control-Allow-Origin", "*");
         response.status(200); //ok
@@ -47,6 +44,7 @@ public class ServerExample {
 
     private String scriptlinesRequest(Request request, Response response){
         String searchTerm = request.params("searchTerm");
+        System.out.println(request.url());
         response.type("application/json");
         response.header("Access-Control-Allow-Origin", "*");
         response.status(200); //ok
@@ -63,7 +61,6 @@ public class ServerExample {
     private String scriptToJson(Request request, String searchTerm){
         int occurances=Read.Return_Occurances(searchTerm);
         String oc = Integer.toString(occurances);
-        //for(int i=0;i<50;i++){System.out.println("count: "+oc);}
         return "{\n"
                 + "\"count\":\""+ oc + "\",\n"
                 + "}";
