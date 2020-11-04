@@ -17,6 +17,6 @@ Make sure that permissions are set for client.sh and server.sh, if they are not 
 **chmod 777 client.sh server.sh**
 
 1. Build the Client
-  * ./client.sh
+   * **./client.sh**
 2. Build the Server
-  * ./server.sh
+   * **./server.sh**
