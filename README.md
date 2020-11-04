@@ -6,8 +6,12 @@ When everybody was younger they anxiously waited by the mailbox hoping that thei
 ## Usage
 Since our project has a webpage and requires user interaction you only need to deploy the website in order to deploy the webpage and get results
 
-* To build: **npm build** 
+* To build: **npm run build** 
 * To run: **npm start**
 
 
 ## Docker
+To build the docker image
+
+1. docker build -t my_370 .
+2. docker run -it --name=my_370 --network=host my_370Tag
