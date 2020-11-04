@@ -15,7 +15,6 @@ There are not addtional options to provide when running the program since the us
 
 
 ## Docker
-To build the docker image
 
 Make sure that permissions are set for client.sh and server.sh, if they are not set run:
 **chmod 777 client.sh server.sh**
