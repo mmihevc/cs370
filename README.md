@@ -6,12 +6,19 @@ When everybody was younger they anxiously waited by the mailbox hoping that thei
 Currently all the functionality is not completely implemented yet but at the moment you can run a Docker container that handle the requests for what word that the user would like to search for. 
 
 ## Usage
+
+To run the Client:
+
 Since our project has a webpage and requires user interaction you only need to deploy the website in order to deploy the webpage and get results. If you want to run the project without Docker, use the commands below:
 
 * To build: **npm run build** 
 * To run: **npm start**
 
 There are not addtional options to provide when running the program since the user interface gets the term from the user's input.
+
+To run the Server:
+
+1. 
 
 
 ## Docker
