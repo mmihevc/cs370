@@ -69,7 +69,7 @@ public class RestfulAPI {
     }
 
     private void configureServer() {
-        port(8080);
+        port(4000);
         String keystoreFile = System.getenv("KEYSTORE_FILE");
         String keystorePassword = System.getenv("KEYSTORE_PASSWORD");
         if (keystoreFile != null && keystorePassword != null) {
