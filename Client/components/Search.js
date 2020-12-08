@@ -30,6 +30,12 @@ function App(props) {
 function FileWord(props) {
 
     return (
+        <Typography style={{fontSize: 6}}>
+            {props.wordRequestLines}
+        </Typography>
+    )
+
+    /*return (
         <div>
             <Table>
                 <thead>
@@ -46,7 +52,7 @@ function FileWord(props) {
                 </tbody>
             </Table>
         </div>
-    )
+    )*/
 
 }
 
@@ -59,6 +65,9 @@ function Form(props) {
                 .then(
                     r => {
                         console.log(r.data);
+                        props.setWordRequestLines(r.data)
+                        props.setForm(!props.form);
+                        props.setDisplayWord(!props.displayWord);
                         /*if (r.data.valid) {
                             props.setWordRequestLines(r.data)
                             props.setForm(!props.form);
