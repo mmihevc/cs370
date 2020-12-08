@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-
+import {Table} from 'reactstrap'
 import {TextField, IconButton, Typography, Button, Grid} from "@material-ui/core";
 import {sendServerRequest} from "./restfulAPI";
 import BackupIcon from '@material-ui/icons/Backup';
@@ -12,35 +12,43 @@ function App(props) {
     const [file, setFile] = useState();
     const [form, setForm] = useState(true);
     const [wordRequestLines, setWordRequestLines] = useState([]);
-    const [fileRequestLines, setFileRequestLines] = useState([]);
     const [displayWord, setDisplayWord] = useState(false);
-    const [displayLines, setDisplayLines] = useState(false);
 
 
     return (
         <>
             {form ? <Form file={file} setFile={setFile} form={form} setForm={setForm}
                           searchTerm={searchTerm} setSearchTerm={setSearchTerm} {...props}
-                          setDisplayWord={setDisplayWord} setDisplayLines={setDisplayLines}
-                          displayWord={displayWord} displayLines={displayLines}
+                          setDisplayWord={setDisplayWord} displayWord={displayWord}
                           setWordRequestLines={setWordRequestLines}
-                          setFileRequestLines={setFileRequestLines}
             /> : null}
-            {displayWord ? <FileWord /> : null}
-            {displayLines ? <FileLines/> : null}
+            {displayWord ? <FileWord wordRequestLines={wordRequestLines}  {...props} /> : null}
         </>
     );
 }
 
-function FileWord() {
+function FileWord(props) {
 
     return (
-        <p>hey</p>
+        <div>
+            <Table>
+                <thead>
+                <tr>
+                    <th>Lines with Word</th>
+                </tr>
+                </thead>
+            <tbody>
+
+            {
+                props.wordRequestLines.map(line => {
+                    return <td>{line}</td>
+                })
+            }
+
+            </tbody>
+            </Table>
+        </div>
     )
-
-}
-
-function FileLines() {
 
 }
 
@@ -69,18 +77,6 @@ function Form(props) {
         }
     }
 
-    function processFile(event) {
-        let file = event.target.files[0];
-        props.setFile(file);
-
-        if (file.type === 'text/plain') {
-            props.produceSnackBar('File uploaded!', 'info');
-        }
-        else {
-            props.produceSnackBar('Incompatiable file type', 'error');
-        }
-    }
-
     return (
         <form>
             <Typography variant={'h5'}>What word would you like to search for?</Typography>
@@ -92,15 +88,6 @@ function Form(props) {
                     id='search'
                     onChange={()=> {props.setSearchTerm(document.getElementById('search').value)}}
                 />
-                <IconButton variant="contained"
-                            component="label">
-                    <BackupIcon/>
-                    <input
-                        type="file"
-                        hidden
-                        onChange={(event) => processFile(event)}
-                    />
-                </IconButton>
                 <Button
                     variant="outlined"
                     style={{float: 'right'}}
