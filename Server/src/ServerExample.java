@@ -4,11 +4,16 @@ import org.apache.log4j.BasicConfigurator;
 import spark.Request;
 import spark.Spark;
 import spark.Response;
-
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+
+import static spark.Spark.path;
+import static spark.route.HttpMethod.before;
 
 
 public class ServerExample {
+    private DateTimeFormatter dateTimeFormat = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+
     public static void main(String[] args){
         new ServerExample();
     }
@@ -23,10 +28,12 @@ public class ServerExample {
     }
 
     private void processRestfulAPIRequest(){
-        Spark.get("/", this::echoRequest);
-        Spark.get("/script/:searchTerm", this::scriptRequest);
-        Spark.get("/scriptLines/:searchTerm", this::scriptlinesRequest);
-        Spark.get("/scriptDoc/:searchTerm", this::scriptDocRequest);
+        path("/api", () -> {
+            Spark.get("/", this::echoRequest);
+            Spark.get("/script/:searchTerm", this::scriptRequest);
+            Spark.get("/scriptLines/:searchTerm", this::scriptlinesRequest);
+            Spark.get("/scriptDoc/:searchTerm", this::scriptDocRequest);
+        });
     }
 
     private String scriptDocRequest(Request request, Response response){
