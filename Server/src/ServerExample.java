@@ -31,6 +31,7 @@ public class ServerExample {
         Spark.get("/", this::echoRequest);
         Spark.get("/script/:searchTerm", this::scriptRequest);
         Spark.get("/scriptlines/:searchTerm", this::scriptlinesRequest);
+        Spark.get("/scriptlines/:searchTerm", this::scriptlinesRequest);
     }
 
     private String scriptRequest(Request request, Response response){
