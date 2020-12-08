@@ -11,19 +11,10 @@ import java.util.HashMap;
 public class ServerExample {
     public static void main(String[] args){
         new ServerExample();
-    /*-> {
-            System.out.println("get");
-            String key=request.params("id");
-            System.out.println(map.get(key));
-            return map.get(key)+"\n";
-        });*/
     }
     public ServerExample(){
         BasicConfigurator.configure();
         configureServer();
-        HashMap<String, String> map=new HashMap<>();
-        map.put("Firstname", "John");
-        map.put("Lastname", "Smith");
         processRestfulAPIRequest();
     }
 
@@ -35,6 +26,25 @@ public class ServerExample {
         Spark.get("/", this::echoRequest);
         Spark.get("/script/:searchTerm", this::scriptRequest);
         Spark.get("/scriptlines/:searchTerm", this::scriptlinesRequest);
+        Spark.get("/scriptDoc/:searchTerm", this::scriptDocRequest);
+    }
+
+    private String scriptDocRequest(Request request, Response response){
+        String searchTerm = request.params("searchTerm");
+        response.type("application/json");
+        response.header("Access-Control-Allow-Origin", "*");
+        response.status(200); //ok
+        return scriptDocJson(request, searchTerm);
+    }
+
+    private String scriptDocJson(Request request, String searchTerm){
+        ArrayList<String> occurances=Read.Return_Lines(searchTerm);
+        String return_string = "{\n";
+        for(int i = 0; i < occurances.size(); i++) {
+            return_string += ("\n" + occurances.get(i) + "\n");
+        }
+        return_string += "\n}\n";
+        return return_string;
     }
 
     private String scriptRequest(Request request, Response response){
