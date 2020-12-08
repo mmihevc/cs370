@@ -55,8 +55,7 @@ function Form(props) {
     function sendSearchRequest(event) {
         event.preventDefault();
 
-        if (props.file == null) {
-            sendGetRequest('/scriptLines/'+props.searchTerm)
+            sendGetRequest('scriptLines/'+props.searchTerm)
                 .then(
                     r => {
                         console.log(r.data);
@@ -72,7 +71,6 @@ function Form(props) {
 
                     }
                 )
-        }
     }
 
     return (
