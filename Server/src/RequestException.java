@@ -1,0 +1,1 @@
+public class RequestException extends Exception {}
