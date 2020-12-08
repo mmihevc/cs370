@@ -1,8 +1,8 @@
 
 
 export function sendServerRequest(query){
-    //const restfulAPI=`localhost:3000/script/${query}`;
-    const restfulAPI=`localhost:3000/script/the`;
+    const restfulAPI=`localhost:3000/script/${query}`;
+    //const restfulAPI=`localhost:3000/script/the`;
     const requestOptions = {method: "GET"};
     return processRestfulAPI(restfulAPI, requestOptions);
 }
