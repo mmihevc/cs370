@@ -37,15 +37,13 @@ function FileWord(props) {
                     <th>Lines with Word</th>
                 </tr>
                 </thead>
-            <tbody>
-
-            {
-                props.wordRequestLines.map(line => {
-                    return <td>{line}</td>
-                })
-            }
-
-            </tbody>
+                <tbody>
+                {
+                    props.wordRequestLines.map(line => {
+                        return <td>{line}</td>
+                    })
+                }
+                </tbody>
             </Table>
         </div>
     )
@@ -58,11 +56,11 @@ function Form(props) {
         event.preventDefault();
 
         if (props.file == null) {
-            sendGetRequest({'word': props.searchTerm})
+            sendGetRequest('/scriptLines/'+props.searchTerm)
                 .then(
                     r => {
                         console.log(r.data);
-                        if (r.data.valid) {
+                        /*if (r.data.valid) {
                             props.setWordRequestLines(r.data)
                             props.setForm(!props.form);
                             props.setDisplayWord(!props.displayWord);
@@ -70,7 +68,7 @@ function Form(props) {
                         else {
                             console.log('hey');
                             props.produceSnackBar('Request failed', 'error');
-                        }
+                        }*/
 
                     }
                 )
