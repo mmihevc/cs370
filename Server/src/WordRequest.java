@@ -7,7 +7,10 @@ public class WordRequest extends RequestData{
 
     public Boolean Do(){
         valid=false;
-        lines=Read.Return_Lines(word);
+        try{lines=Read.Return_Lines(word);}
+        catch(Exception e){
+            valid=false;
+        }
         valid=true;
         return valid;
     }
