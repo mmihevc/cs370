@@ -7,7 +7,7 @@ const outputDirectory = "dist";
 
 module.exports = {
     entry: ["@babel/polyfill", "./Client/index.js"],
-    devServer: { port: 4000, open: true, hot: true, host: "0.0.0.0" },
+    devServer: { port: 4000, open: true, hot: true, proxy: { "/api/*": "http://localhost:3000" } },
     devtool: 'cheap-source-map',
     module: {
         rules: [

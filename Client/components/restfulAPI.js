@@ -2,14 +2,16 @@
 
 export function sendServerRequest(query){
     const restfulAPI=`localhost:3000/script/${query}`;
-    //const restfulAPI=`localhost:3000/script/the`;
+    //const restfulAPI=`localhost:3000`;
     const requestOptions = {method: "GET"};
-    return processRestfulAPI(restfulAPI, requestOptions);
+    console.log(requestOptions)
+    console.log(query)
+    return processRestfulAPI(requestOptions);
 }
 
-async function processRestfulAPI(restfulAPI, requestOptions) {
+async function processRestfulAPI(requestOptions) {
     try {
-        let response = await fetch(restfulAPI, requestOptions);
+        let response = await fetch( requestOptions);
         return {
             statusCode: response.status,
             statusText: response.statusText,
