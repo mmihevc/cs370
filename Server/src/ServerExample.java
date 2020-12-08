@@ -1,11 +1,11 @@
 package src;
+
 import org.apache.log4j.BasicConfigurator;
 import spark.Request;
 import spark.Spark;
 import spark.Response;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 
 public class ServerExample {
@@ -25,7 +25,7 @@ public class ServerExample {
     private void processRestfulAPIRequest(){
         Spark.get("/", this::echoRequest);
         Spark.get("/script/:searchTerm", this::scriptRequest);
-        Spark.get("/scriptlines/:searchTerm", this::scriptlinesRequest);
+        Spark.get("/scriptLines/:searchTerm", this::scriptlinesRequest);
         Spark.get("/scriptDoc/:searchTerm", this::scriptDocRequest);
     }
 
