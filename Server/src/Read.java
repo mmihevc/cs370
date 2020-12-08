@@ -53,6 +53,20 @@ return return_value;
 		}
 		return lines;
 	}
+	public static ArrayList<String> Return_Lines(String lookingFor, String doc)
+	{
+		String t = doc;
+		String[] data = t.split("\n");
+		ArrayList<String> lines = new ArrayList<String>();
+		for(int i =0; i < data.length; i++)
+		{
+			if(data[i].indexOf(lookingFor) != -1)
+			{
+				lines.add(data[i]);
+			}
+		}
+		return lines;
+	}
 
 
 // https://www.techiedelight.com/find-occurrences-of-substring-string-java/
