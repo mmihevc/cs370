@@ -4,7 +4,9 @@
   "description": "370 Term Project",
   "scripts": {
     "start": "node_modules/.bin/webpack-dev-server -d",
-    "build": "node_modules/.bin/webpack -p"
+    "build": "node_modules/.bin/webpack -p",
+    "startServer": "java -Dorg.slf4j.simpleLogger.log.com.mrpowers=info -jar ../target/Server-*.jar 8080",
+    "buildServer": "mvn package -f Server/pom.xml"
   },
   "repository": {
     "type": "git",
