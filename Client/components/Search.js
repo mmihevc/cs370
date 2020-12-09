@@ -32,36 +32,31 @@ function App(props) {
 
 function FileWord(props) {
 
-    return (
-        <div>
-            <Typography style={{fontSize: 10}}>
-                {props.wordRequestLines}
-            </Typography>
-            <IconButton onClick={() => {props.setForm(!props.form); props.setDisplayWord(!props.displayWord)}}>
-                <ExitToAppIcon/>
-            </IconButton>
-        </div>
+    if (JSON.stringify(props.wordRequestLines) !== '{}') {
+        return (
+            <div>
+                <Typography style={{fontSize: 10}}>
+                    {props.wordRequestLines}
+                </Typography>
+                <IconButton onClick={() => {props.setForm(!props.form); props.setDisplayWord(!props.displayWord)}}>
+                    <ExitToAppIcon/>
+                </IconButton>
+            </div>
 
-    )
-
-    /*return (
-        <div>
-            <Table>
-                <thead>
-                <tr>
-                    <th>Lines with Word</th>
-                </tr>
-                </thead>
-                <tbody>
-                {
-                    props.wordRequestLines.map(line => {
-                        return <td>{line}</td>
-                    })
-                }
-                </tbody>
-            </Table>
-        </div>
-    )*/
+        )
+    }
+    else {
+        return (
+            <div>
+                <Typography>
+                    Word does not exist
+                </Typography>
+                <IconButton onClick={() => {props.setForm(!props.form); props.setDisplayWord(!props.displayWord)}}>
+                    <ExitToAppIcon/>
+                </IconButton>
+            </div>
+        )
+    }
 
 }
 
