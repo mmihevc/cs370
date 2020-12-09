@@ -4,6 +4,7 @@ import {TextField, IconButton, Typography, Button, Grid} from "@material-ui/core
 import {sendServerRequest} from "./restfulAPI";
 import BackupIcon from '@material-ui/icons/Backup';
 import {sendGetRequest} from "../hooks/API";
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
 
 function App(props) {
@@ -22,7 +23,9 @@ function App(props) {
                           setDisplayWord={setDisplayWord} displayWord={displayWord}
                           setWordRequestLines={setWordRequestLines}
             /> : null}
-            {displayWord ? <FileWord wordRequestLines={wordRequestLines}  {...props} /> : null}
+            {displayWord ? <FileWord wordRequestLines={wordRequestLines}  {...props} setForm={setForm}
+                                     setDisplayWord={setDisplayWord} form={form} displayWord={displayWord}
+            /> : null}
         </>
     );
 }
@@ -30,9 +33,15 @@ function App(props) {
 function FileWord(props) {
 
     return (
-        <Typography style={{fontSize: 10}}>
-            {props.wordRequestLines}
-        </Typography>
+        <div>
+            <Typography style={{fontSize: 10}}>
+                {props.wordRequestLines}
+            </Typography>
+            <IconButton onClick={() => {props.setForm(!props.form); props.setDisplayWord(!props.displayWord)}}>
+                <ExitToAppIcon/>
+            </IconButton>
+        </div>
+
     )
 
     /*return (
