@@ -30,7 +30,7 @@ function App(props) {
 function FileWord(props) {
 
     return (
-        <Typography style={{fontSize: 6}}>
+        <Typography style={{fontSize: 10}}>
             {props.wordRequestLines}
         </Typography>
     )
